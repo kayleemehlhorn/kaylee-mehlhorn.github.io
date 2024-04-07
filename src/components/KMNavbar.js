@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -6,16 +6,28 @@ import IconButton from '@mui/material/IconButton';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import AttachFileIcon from '@mui/icons-material/AttachFile'; // Changed import statement
-import { Link } from 'react-router-dom'; // If using React Router
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+import { Link } from 'react-router-dom';
 
 function KMNavbar() {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <AppBar position="static" sx={{ backgroundColor: '#D3D3D3'}}>
       <Toolbar>
         {/* Home Button with Link */}
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1}} >
-          <Link to="/" style={{ textDecoration: 'none', color: '#CBC3E3', fontFamily: 'monospace' }}>Kaylee Mehlhorn</Link>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          {hovered ? (
+            <span style={{ textDecoration: 'none', color: '#AF63FF', fontFamily: 'monospace' }}>Software Engineer</span>
+          ) : (
+            <Link to="/" style={{ textDecoration: 'none', color: '#AF63FF', fontFamily: 'monospace' }}>Kaylee Mehlhorn</Link>
+          )}
         </Typography>
         
         {/* Social Icons */}
@@ -31,7 +43,6 @@ function KMNavbar() {
               color: '#ee2a7b'
             },
           }}
-  
         >
           <InstagramIcon />
         </IconButton>
@@ -79,7 +90,7 @@ function KMNavbar() {
             },
           }}
         >
-         <AttachFileIcon />
+          <AttachFileIcon />
         </IconButton>
       </Toolbar>
     </AppBar>
