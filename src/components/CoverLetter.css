@@ -1,20 +1,52 @@
 /* CoverLetter.css */
 
 .cover-letter-container {
-    display: flex; /* Use Flexbox layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .objective-container {
-    margin-left: 20px; /* Adjust the margin to create space between the image and the text */
-    font-family: 'monospace';
-    font-size: medium;
+    text-align: center;
+    margin-bottom: 20px; /* Add margin between objective and additional sections */
 }
+
+.additional-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-sections > div {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.additional-sections h2, .additional-sections p, .additional-sections ul, .additional-sections li {
+    margin: 0;
+    padding: 0;
+}
+
+.objective-container p {
+        font-family: 'monospace'; 
+        font-size: medium; 
+        color: #333; 
+        font-weight: bold;
+        padding-left: 20%;
+        padding-right: 20%;
+       
+    }
+
 
 .profile-pic {
     width: 200px; /* Adjust the width as needed */
     height: 200px; /* Adjust the height as needed */
     border: 3px solid #dfc7fc; /* Add a white border */
     border-radius: 50%; /* Make the image round */
-    box-shadow: 0 0 10px rgba(226, 74, 246, 0.2); /* Add a subtle shadow effect */
+    box-shadow: 0 0 10px rgba(226, 74, 246, 0.2); 
+    position: relative;
+    left: 20px; 
+    top: 20px;
   }
   
+

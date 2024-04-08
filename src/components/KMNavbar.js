@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
+import EmailIcon from '@mui/icons-material/Email'; // Import EmailIcon
 import { Link } from 'react-router-dom';
 
 function KMNavbar() {
@@ -20,16 +20,31 @@ function KMNavbar() {
           variant="h6"
           component="div"
           sx={{ flexGrow: 1 }}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
         >
-          {hovered ? (
-            <span style={{ textDecoration: 'none', color: '#AF63FF', fontFamily: 'monospace' }}>Software Engineer</span>
-          ) : (
-            <Link to="/" style={{ textDecoration: 'none', color: '#AF63FF', fontFamily: 'monospace' }}>Kaylee Mehlhorn</Link>
-          )}
+          <Link 
+            to="/" 
+            style={{ textDecoration: 'none', fontFamily: 'monospace', color: hovered ? '#AF63FF' : '#000' }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            {hovered ? "Software Engineer" : "Kaylee Mehlhorn"}
+          </Link>
         </Typography>
         
+        {/* Email Icon */}
+        <IconButton
+          color="inherit"
+          aria-label="email"
+          component="a"
+          href="mailto:mehlhorn17@gmail.com" 
+          sx={{
+            '&:hover': {
+              color: '#ff5722' 
+            },
+          }}
+        >
+          <EmailIcon />
+        </IconButton>
         {/* Social Icons */}
         <IconButton
           color="inherit"
@@ -75,22 +90,6 @@ function KMNavbar() {
           }}
         >
           <GitHubIcon />
-        </IconButton>
-        {/* Cover Letter Icon */}
-        <IconButton
-          color="inherit"
-          aria-label="cover-letter"
-          component="a"
-          href=""
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            '&:hover': {
-              color: '#000000'
-            },
-          }}
-        >
-          <AttachFileIcon />
         </IconButton>
       </Toolbar>
     </AppBar>
