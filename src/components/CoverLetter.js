@@ -1,6 +1,7 @@
 import React from 'react';
 import profilepic from '../assets/profilepic.jpg';
-import './CoverLetter.css'; // Import component-specific CSS file
+import wgulogo from '../assets/wgulogo.png';
+import './CoverLetter.css'; 
 
 function CoverLetter() {
     return (
@@ -13,6 +14,7 @@ function CoverLetter() {
         <div className="additional-sections">
             <div className="education-container">
                 <h2 style={{ textDecoration: 'underline'}}>Education</h2>
+                <img src={wgulogo} alt="school logo" className='wgulogo'/>
                 <p>Western Governors University, Salt Lake City</p>
                 <ul>
                     <li>Bachelor of Software Engineering</li>

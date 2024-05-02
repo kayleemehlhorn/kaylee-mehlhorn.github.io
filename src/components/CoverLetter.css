@@ -55,8 +55,9 @@
 }
 
 .additional-sections ul {
-    list-style-type: circle; /* Remove default bullet points */
-     /* Remove default left padding */
+    list-style-type: disc; 
+    list-style-position: inside;
+     
 }
 
 .additional-sections li {
@@ -64,8 +65,8 @@
     font-size: medium;
     color: #333;
     font-weight: bold;
-    padding-left: 20px; /* Adjust padding for spacing */
-    padding-right: 20%;
+    padding-left: 0px; /* Adjust padding for spacing */
+    padding-right: 0%;
     margin-bottom: 5px; /* Adjust margin bottom for spacing */
 }
 
@@ -75,6 +76,13 @@
     border: 3px solid #dfc7fc; /* Add a white border */
     border-radius: 50%; /* Make the image round */
     box-shadow: 0 0 10px rgba(226, 74, 246, 0.2);
+    margin-top: 20px; /* Adjust margin-top to move the profile picture down */
+    margin-bottom: 30px;
+}
+
+.wgulogo {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
     margin-top: 20px; /* Adjust margin-top to move the profile picture down */
     margin-bottom: 30px;
 }
